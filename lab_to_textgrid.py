@@ -23,7 +23,6 @@ for line in inf:
     tokens = line.split()
     time = tokens[1].strip()
     label = tokens[2].strip()
-    print label, time
     labs.append((str(int(time)/10000000.0), label))
 
 maxtime = str(labs[-1][0])
