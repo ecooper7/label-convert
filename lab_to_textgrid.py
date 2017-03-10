@@ -18,12 +18,12 @@ outf = open(ofname, 'w')
 # get info from .lab
 labs = []
 for line in inf:
-    if not re.search('^\t', line):
+    if not re.search('^\s*\d+\s*\d+\s*\S+', line): #regular expresion for "space number space number space word"
         continue
     tokens = line.split()
-    time = tokens[0].strip()
+    time = tokens[1].strip()
     label = tokens[2].strip()
-    labs.append((time, label))
+    labs.append((str(int(time)/10000000.0), label))
 
 maxtime = str(labs[-1][0])
 
